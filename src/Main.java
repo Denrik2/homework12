@@ -5,6 +5,6 @@ public class Main {
         Book karamazov = new Book("Братья Карамазовы", 1879, dostoevsky.name + "" +dostoevsky.surname);
         Book idiot = new Book("Идиот", 1867, dostoevsky.name + "" +dostoevsky.surname);
         System.out.println("karamazov.author = " + karamazov.author);
-        karamazov.setAge(1880);
+        karamazov.setAge(1881);
     }
 }
