@@ -24,5 +24,25 @@ public class Book {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public String toString() {
+        return "Название книги " + this.name  + ". Год написания " + this.age + this.author.toString();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }else if (this.name != ((Book) other).name) {
+            return false;
+        }else {
+        return true;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name);
+    }
 }
 
