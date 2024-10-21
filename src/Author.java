@@ -19,19 +19,16 @@ public class Author {
         return ". Имя автора " + this.name + ". Фамилия автора " + this.surname;
     }
 
-    @Override
-    public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }else if (this.name != ((Author) other).name) {
-            return false;
-        }else {
+    public boolean equals(Author other) {
+        if (this.getName().equals(other.getName()) && this.getSurname().equals(other.getName())) {
             return true;
+        }else {
+            return false;
         }
     }
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(surname);
+        return java.util.Objects.hash(name, surname);
     }
 }

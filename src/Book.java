@@ -29,20 +29,17 @@ public class Book {
         return "Название книги " + this.name  + ". Год написания " + this.age + this.author.toString();
     }
 
-    @Override
-    public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        }else if (this.name != ((Book) other).name) {
-            return false;
+    public boolean equals(Book other) {
+        if (this.getName().equals(other.getName()) && this.getAge() == other.getAge() && this.getAuthor().equals(other.getAuthor())) {
+            return true;
         }else {
-        return true;
+            return false;
         }
     }
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(name);
+        return java.util.Objects.hash(name, age, author);
     }
 }
 
