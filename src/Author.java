@@ -19,12 +19,14 @@ public class Author {
         return ". Имя автора " + this.name + ". Фамилия автора " + this.surname;
     }
 
+
     public boolean equals(Author other) {
-        if (this.getName().equals(other.getName()) && this.getSurname().equals(other.getName())) {
+        if (this == other) {
             return true;
-        }else {
+        } else if (this == null || this.getClass() != other.getClass()) {
             return false;
         }
+        return false;
     }
 
     @Override
